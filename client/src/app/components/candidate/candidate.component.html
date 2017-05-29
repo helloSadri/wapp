@@ -1,0 +1,15 @@
+<div class="card search">
+	<h1 class="search-headline">CANDIDAT</h1>
+	<label class="search-label">recherche
+		<span *ngIf="query"
+		[innerHTML]="' for: ' + query"></span></label>
+		<input class="search-input" [(ngModel)]="query" placeholder="Tapez votre recherche">
+	</div>
+
+	<ul class="candidatelist cf" *ngIf="query">
+		<li class="candidatelist-item cf" (click)="showCandidate(item); query=''" *ngFor="let item of (candidates | search: query)">
+			<app-candidate-item class="content" [candidate]=item></app-candidate-item>
+		</li>
+	</ul>
+
+	<app-candidate-details *ngIf="currentCandidate" [candidate]="currentCandidate"></app-candidate-details>

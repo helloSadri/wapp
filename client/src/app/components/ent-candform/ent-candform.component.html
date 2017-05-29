@@ -1,0 +1,68 @@
+<div class="jumbotron">
+  <h2>Enregistrer candidat</h2>
+
+  <form [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)">
+    <div class="form-group">
+      <label>Nom</label>
+      <input class="form-control" type="text" placeholder="Nom" [formControl]="complexForm.controls['lastName']">
+    </div>
+
+    <div class="form-group">
+      <label>Prénom</label>
+      <input class="form-control" type="text" placeholder="Prénom" [formControl]="complexForm.controls['firstName']">
+    </div>
+
+    <div class="form-group">
+      <label>LANGAGE</label>
+    </div>
+    <div class="radio">
+      <label class="checkbox-inline">
+        <input type="checkbox" value="php" name="php" [formControl]="complexForm.controls['php']">PHP
+      </label>
+    </div>
+
+    <div class="radio">
+      <label class="checkbox-inline">
+        <input type="checkbox" value="ruby" name="ruby" [formControl]="complexForm.controls['ruby']">RUBY
+      </label>
+    </div>
+
+    <div class="radio">
+      <label class="checkbox-inline">
+        <input type="checkbox" value="python" name="python" [formControl]="complexForm.controls['python']">Python
+      </label>
+    </div>
+
+    <div class="radio">
+      <label class="checkbox-inline">
+        <input type="checkbox" value="javascript" name="javascript" [formControl]="complexForm.controls['javascript']">javascript
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label>FRAMEWORK</label>
+    </div>
+    <label class="checkbox-inline">
+        <input type="checkbox" value="symfony" name="symfony" [formControl]="complexForm.controls['symfony']">Symfony
+      </label>
+    <label class="checkbox-inline">
+        <input type="checkbox" value="node" name="node" [formControl]="complexForm.controls['node']"> NodeJs
+      </label>
+    <label class="checkbox-inline">
+        <input type="checkbox" value="rails" name="rails" [formControl]="complexForm.controls['rails']"> on rails
+      </label>
+    <label class="checkbox-inline">
+        <input type="checkbox" value="django" name="django" [formControl]="complexForm.controls['django']"> Django
+      </label>
+
+    <!--<div class="form-group">
+      <label>FRAMEWORK</label>
+    </div>
+    <textarea [(ngModel)]='rapidPageValue' rows="15" cols="120">                             
+</textarea>-->
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-default">ENREGISTRER</button>
+    </div>
+  </form>
+</div>

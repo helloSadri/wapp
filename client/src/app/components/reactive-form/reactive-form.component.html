@@ -1,0 +1,80 @@
+<!--<p>
+  reactive-form works!
+</p>-->
+
+<form (ngSubmit)="processForm()" [formGroup]="form">
+
+  <!--<div class="form-group">
+    <label for="name">Nom</label>
+    <input type="text" class="form-control" name="name" required formControlName='name'>
+
+    <span class="help-block" *ngIf="formErrors.name">
+        {{formErrors.name}}
+    </span>
+  </div>
+
+  <div class="form-group">
+    <label for="firstname">Prénom</label>
+    <input type="text" class="form-control" name="firstname" required formControlName='firstname'>
+
+    <span class="help-block" *ngIf="formErrors.firstname">
+        {{formErrors.firstname}}
+    </span>
+  </div>-->
+
+  <!--addresses-->
+  <div class="form-group" formArrayName="addresses">
+    <div *ngFor="let address of form.controls.addresses.controls; let i=index;">
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          Address #{{i+1}}
+
+
+          <span *ngIf="form.controls.addresses.controls.length > 1" (click)="removeAddress(i)">
+           Suprimer
+          </span>
+        </div>
+
+        <div class="panel-body" [formGroupName]="i">
+          <div class="form-group">
+            <label>Ville</label>
+            <input type="text" class="form-control" formControlName="city" required>
+
+            <span class="help-block" *ngIf="formErrors.addresses[i].city">
+              {{formErrors.addresses[i].city}}
+            </span>
+
+          </div>
+
+          <div class="form-group">
+            <label>Pays</label>
+            <input type="text" class="form-control" formControlName="country" required>
+
+            <span class="help-block" *ngIf="formErrors.addresses[i].country">
+             {{ formErrors.addresses[i].country}}
+            </span>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!--add address button-->
+
+  <div class="text-right">
+    <a (click)="addAddress()" class="btn btn-info"> Ajouter une adresse</a>
+  </div>
+
+
+  <!--<div class="form-group ">
+    <button type="submit " class="btn btn-danger ">
+      Soumettre
+    </button>
+  </div>-->
+
+</form>

@@ -1,0 +1,21 @@
+/* ---------------------- */
+/* candidatet-item.css Styles */
+/* ---------------------- */
+
+
+
+.candidatet-info {
+  display: block;
+  margin: 5px 0;
+}
+
+.candidatet-info .candidatet-name {
+  font-size: 1.4rem; 
+  margin-top: 0;
+}
+
+.candidatet-info .candidatet-reknown {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 0;
+}
